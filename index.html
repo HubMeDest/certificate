@@ -21,12 +21,13 @@
       padding: 40px;
       text-align: center;
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
@@ -35,6 +36,12 @@
       font-weight: bold;
       margin: 20px 0;
       color: #5c3a8d;
+    }
+
+    .course {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #333;
     }
 
     input {
@@ -63,6 +70,14 @@
       margin-top: 10px;
       color: #666;
     }
+
+    .seal {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -73,12 +88,18 @@
 
     <div id="nameField" class="name">[ Your Name Here ]</div>
 
+    <p class="course">has successfully completed<br>
+    <strong>Teaching Metacognition to 5th–6th Graders</strong></p>
+
     <input type="text" id="nameInput" placeholder="Type your name..." />
     <button onclick="setName()">Generate Certificate</button>
 
     <button class="hidden" id="printBtn" onclick="window.print()">Print / Save as PDF</button>
 
     <p class="note">✨ Once your name appears above, you can print or save your certificate!</p>
+
+    <!-- https://drive.google.com/file/d/1n1lbTHYw6GAjsMn12Ih2wyPvWDzIdbn2/view?usp=drive_link -->
+    <img src="YOUR_LOGO_URL_HERE" alt="Logo Seal" class="seal">
   </div>
 
   <script>
