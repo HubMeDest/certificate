@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate of Completion</title>
+  <style>
+    body {
+      background: #f9f5ff;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      border: 5px double #888;
+      padding: 40px;
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #5c3a8d;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #5c3a8d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .note {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Certificate of Completion</h1>
+    <p>This certifies that</p>
+
+    <div id="nameField" class="name">[ Your Name Here ]</div>
+
+    <input type="text" id="nameInput" placeholder="Type your name..." />
+    <button onclick="setName()">Generate Certificate</button>
+
+    <button class="hidden" id="printBtn" onclick="window.print()">Print / Save as PDF</button>
+
+    <p class="note">✨ Once your name appears above, you can print or save your certificate!</p>
+  </div>
+
+  <script>
+    function setName() {
+      const name = document.getElementById("nameInput").value;
+      if (name.trim() !== "") {
+        document.getElementById("nameField").textContent = name;
+        document.getElementById("nameInput").classList.add("hidden");
+        document.querySelector("button").classList.add("hidden");
+        document.getElementById("printBtn").classList.remove("hidden");
+      }
+    }
+  </script>
+
+</body>
+</html>
